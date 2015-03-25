@@ -1,0 +1,33 @@
+@(result: java.util.List[currency.exchange.models.FxMessage], clientType: java.lang.String)
+
+@import currency.exchange.utils.JsonUtils
+@layouts.appLayout("Currency Exchange",bodyId= "currencyExchange", bodyClass ="home") {
+   <div data-client-type="@clientType" id="stats_container" data-url="@routes.ExchangeAkkaController.add()" data-url-ws="@routes.ExchangeAkkaController.statsWs().webSocketURL(request)">
+		<h2 class="title centered">Currency Statistics</h2>
+   		<div class="container-fluid">
+			<div class="row chart_row">
+				<div class="col-md-12">
+						<div class="chart_container">
+							<canvas id="chart_line-volume" width="400" height="400"></canvas>
+						</div>
+						<h4>Request Volume By Country</h4>
+				
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row chart_row">
+				<div class="col-md-12">
+					<div class="chart_container">
+						<canvas id="chart_bar-volume" width="400" height="400"></canvas>
+					</div>
+					<h4>Currency Volume (Sell / Buy)</h4>
+				</div>
+			</div>
+		</div>
+   </div>
+   
+   <script type="text/javascript">
+   		var dataModels = @Html(JsonUtils.toJson(result));
+   </script>
+}

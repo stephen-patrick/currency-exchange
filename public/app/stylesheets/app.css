@@ -1,0 +1,129 @@
+body {
+	background-color: #000;
+}
+
+
+#app_wrapper header, #app_wrapper #app_content-container {
+	width: 100%;
+	padding: 0 1.25em;
+}
+
+#app_wrapper header {
+	background: none repeat scroll 0 0 #364550;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+    color: #fff;
+    height: 50px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+#app_wrapper #app_content-container {
+	margin-top: 50px;
+	padding-top: 1.25em;
+}
+
+
+.navbar-nav li a {
+	color: #FFF;
+	text-transform: uppercase;
+	
+}
+
+#app_mnu-add-currency {
+	border: none !important;
+	background-color:#589f53;
+	right: 0 !important;
+}
+
+.open 	#app_mnu-add-currency {
+	display: inline-block !important;
+}
+
+
+#app_mnu-add-currency  input[type="button"] {
+	background-color: #364550;
+}
+
+#app_mnu-add-currency  input[type="button"]:hover {
+	background-color: #FFF;
+}
+
+
+.dropdown-menu {
+	right: 0 !important;
+}
+
+header h3.title {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+
+header h3.title a {
+	color: #FFF;
+}
+
+
+
+#app_mnu-add-currency h4 {
+	
+	border-bottom: 1px solid #FFF;
+	padding: 0 1.25em;
+	padding-bottom: 0.5em;
+	
+	
+}
+
+header .nav > li {
+	position: inherit;
+	display: inline-block;
+}
+
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover,
+.nav li a:focus, .nav li a:hover {
+    background-color: #589f53;
+    border-color: #FFF;
+}
+
+.centered {
+	text-align: center;
+}
+
+.padding {
+	padding: 1.25em;
+}
+
+#stats_container {
+	margin-top: 2em;
+	padding-bottom: 1.25em;
+	
+}
+
+#stats_container .title {
+	margin-bottom: 1.25em;
+}
+
+#stats_container .chart_row  {
+	margin-bottom: 1.25em;
+	text-align: center;
+}
+
+#stats_container .chart_row h4, #stats_container h2 {
+	margin-top: 1.25em;
+	color: #FFF;
+
+}
+
+#stats_container .chart_container {
+	padding: 1.25em;
+	background-color: #FFF;
+		display: inline-block;
+}
+
+
+.documentation-container {
+	background-color: #FFF;
+}

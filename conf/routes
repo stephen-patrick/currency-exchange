@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.docs()
+
+
+GET     /fx-rabbitmq                controllers.ExchangeRabbitmqController.init()
+POST    /fx-rabbitmq/currencies     controllers.ExchangeRabbitmqController.add()
+GET     /fx-rabbitmq/currencies     controllers.ExchangeRabbitmqController.statsWs()
+
+
+GET     /fx-akka                controllers.ExchangeAkkaController.init()
+POST    /fx-akka/currencies     controllers.ExchangeAkkaController.add()
+GET     /fx-akka/currencies     controllers.ExchangeAkkaController.statsWs()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+
+
+
