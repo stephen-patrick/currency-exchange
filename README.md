@@ -93,7 +93,7 @@
 				 					<tr>
 				 						<td> AKKA </td>
 				 						<td>An AKKA endpoint was implemented as this offers durable, location transparent messaging, while also providing 
-				 						a higher level of abstraction for writing concurrent programs. AKKA, like Rabbit mq offers durable messaging. </td>
+				 						a higher level of abstraction for writing concurrent programs. AKKA, like Rabbit mq offers durable messaging. If requirements dictate, AKKA can also integrate with Rabbitmq. </td>
 				 					</tr>
 				 					
 				 					<tr>
