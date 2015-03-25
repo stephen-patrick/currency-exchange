@@ -115,7 +115,7 @@
 				 		</table>
 				 		
 				 		<h4 id="Setup">Setup / Configuration</h4>
-				 		<p>Basic requirement is play framework binaries. The akka endpoint can be executed one installed from /fx-akka </p>
+				 		<p>Basic requirement is play framework binaries. The akka endpoint can be executed once installed from /fx-akka.   Messages can be sent via a http post request to /fx-akka. The interaction is not full duplex.  </p>
 				 		
 				 		<p>To test the Rabbitmq endpoint, Rabbitmq server must be installed.</p>
 				 		<p>See -> https://www.rabbitmq.com/download.html </p>
