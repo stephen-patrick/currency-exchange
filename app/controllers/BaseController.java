@@ -89,6 +89,11 @@ public class BaseController extends Controller {
 	}
 	
 
-	
+	protected static Result serverError(String message ) {
+		Map<String, Object> requestResults = new HashMap<String, Object>();
+		requestResults.put("errorMessage", message);
+		requestResults.put("error", true);
+		return internalServerError(JsonUtils.toJson(requestResults).toString());
+	}
 
 }

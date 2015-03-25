@@ -39,6 +39,10 @@ public class ExchangeConfiguration {
 	public static FxMessageService fxMessageService() {
 		return configurator.fxMessageService();
 	}
+	
+	public static Boolean rabbitmqEnabled() {
+		return configurator.rabbitmqEnabled();
+	}
 
 	public static interface ExchangeConfigurator {
 		public void onStart(Application application);
@@ -50,6 +54,8 @@ public class ExchangeConfiguration {
 		public ExchangeBroker exchangeBrokerAkka();
 
 		public FxMessageService fxMessageService();
+		
+		public boolean rabbitmqEnabled();
 
 	}
 
@@ -81,8 +87,11 @@ public class ExchangeConfiguration {
 
 			
 
-				rabbitmqConsumer.start();
-				rabbitmqProducer.start();
+				if(rabbitmqEnabled()) {
+					rabbitmqConsumer.start();
+					rabbitmqProducer.start();
+				}
+			
 
 			} catch (Exception e) {
 				Logger.error("Error failed to start rabbitmq client", e);
@@ -94,8 +103,12 @@ public class ExchangeConfiguration {
 		@Override
 		public void onShutdown(Application application) {
 			try {
-				rabbitmqConsumer.shutdown();
-				rabbitmqProducer.shutdown();
+				
+				if(rabbitmqEnabled()) {
+					rabbitmqConsumer.shutdown();
+					rabbitmqProducer.shutdown();
+				}
+				
 			} catch (Exception e) {
 				Logger.error("Error failed to stop rabbitmq client", e);
 				throw new ExchangeException(
@@ -135,6 +148,11 @@ public class ExchangeConfiguration {
 		private int rabbitmqConsumerPoolSize() {
 			return application.configuration().getInt(
 					"rabbitmq.consumer.pool.size", 2);
+		}
+		
+		public boolean rabbitmqEnabled() {
+			return application.configuration().getBoolean(
+					"rabbitmq.enabled", false);
 		}
 
 	}

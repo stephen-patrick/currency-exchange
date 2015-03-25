@@ -55,6 +55,12 @@ public class ExchangeRabbitmqController  extends BaseController {
 	
 
 	public static Result add() {
+		if(!ExchangeConfiguration.rabbitmqEnabled()) {
+			Map<String,Object> results = new HashMap<String,Object>();
+			return serverError("Rabbitmq not enabled, Endpoint not available. Please enable rabbitmq.");
+		}
+		
+		
 		return add(exchangeBroker);
 	}
 	
@@ -63,8 +69,8 @@ public class ExchangeRabbitmqController  extends BaseController {
 	 * Web Socket
 	 */
 	 public static Result init() {
-		 return ok(exchangeStatsRabbitmq.render(fxMessageService.listFx(
-	    			new FxSearchCriteria("EUR", "GBP",0.7471)),"ws"));
+		return ok(exchangeStatsRabbitmq.render(fxMessageService.listFx(
+	    			new FxSearchCriteria("EUR", "GBP",0.7471)),"ws", ExchangeConfiguration.rabbitmqEnabled()));
 	    
 	}
 	 

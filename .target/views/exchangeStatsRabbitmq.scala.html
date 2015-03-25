@@ -1,8 +1,12 @@
-@(result: java.util.List[currency.exchange.models.FxMessage], clientType: java.lang.String)
+@(result: java.util.List[currency.exchange.models.FxMessage], clientType: java.lang.String, rabbitMqEnabled: java.lang.Boolean)
 
 @import currency.exchange.utils.JsonUtils
 @layouts.appLayout("Currency Exchange",bodyId= "currencyExchange", bodyClass ="home") {
-   <div data-client-type="@clientType" id="stats_container" data-url="@routes.ExchangeRabbitmqController.add()" data-url-ws="@routes.ExchangeRabbitmqController.statsWs().webSocketURL(request)">
+   <div data-client-enabled="@rabbitMqEnabled" data-client-type="@clientType" id="stats_container" data-url="@routes.ExchangeRabbitmqController.add()" data-url-ws="@routes.ExchangeRabbitmqController.statsWs().webSocketURL(request)">
+		@if(!rabbitMqEnabled) {
+				<h2 class="title centered">***Rabbitmq Not Configured Endpoint Disabled</h2>
+		}
+		
 		<h2 class="title centered">Currency Statistics</h2>
    		<div class="container-fluid">
 			<div class="row chart_row">

@@ -60,14 +60,18 @@
 		var urlWs = $container.attr("data-url-ws");
 		var urlSSE= $container.attr("data-url-sse");
 		
-	
 		var currencyView = new UI.Views.CurrencyView(dataModels, {
 			addUrl: url
 		});
 		
-		//create the websocket to revice pushed responses
-		//probably overkill as we are not sending any date to the socket
-		//in this case server side events would be a better solution
+		//rabbitmq not enabled
+		if($container.attr("data-client-enabled")) {
+			if($container.attr("data-client-enabled")==='false') {
+				alert("NOT ENABLED");
+				return;
+			}
+		}
+		
 		
 		if($container.attr("data-client-type")==='ws') {
 			var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket
