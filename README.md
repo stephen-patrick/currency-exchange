@@ -8,6 +8,16 @@
 				 			<li><a href="#Technology">Technology</a></li>
 				 			<li><a href="#Technology">Setup / Configuration</a></li>
 				 		</ul>
+				 		
+				 		<h4>Endpoint Urls</h4>
+				 		<p>Please ensure that you are using http and not https.
+				 		<li>What is the endpoint which we should POST messages to? 
+				 			<p>http://blooming-escarpment-1547.herokuapp.com/fx-akka</p>
+				 		</li>
+				 		<li>What is the frontend URL we should load to view the output? 
+				 			<p>http://blooming-escarpment-1547.herokuapp.com/fx-akka</p>
+				 		</li>
+				 		</ul>
 				 
 				 		<h4 id="Overview">Overview</h4>
 				 		<p>This is a very simple implementation lacking many functional and non functional requirements
