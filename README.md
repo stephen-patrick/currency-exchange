@@ -12,7 +12,7 @@
 				 		<h4>Endpoint Urls</h4>
 				 		<p>Please ensure that you are using http and not https.
 				 		<li>What is the endpoint which we should POST messages to? 
-				 			<p>http://blooming-escarpment-1547.herokuapp.com/fx-akka</p>
+				 	<p>http://blooming-escarpment-1547.herokuapp.com/fx-akka/currencies</p>
 				 		</li>
 				 		<li>What is the frontend URL we should load to view the output? 
 				 			<p>http://blooming-escarpment-1547.herokuapp.com/fx-akka</p>
